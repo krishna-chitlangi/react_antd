@@ -66,17 +66,22 @@ function App() {
   var i = 0
 
   return (
-    <div>
-
+    <div style={{ alignContent: 'center', marginLeft: '30%' }}>
+      <h1 style={{ backgroundColor: 'lightBlue', padding: '20px', width: '170px' }}>Welcome </h1>
+      <h2> Enter github username</h2>
+      <br></br>
+      <br></br>
       <form>
         <input type="text" onChange={handleChange} placeholder="enter the github username" value={user} />
         <Button type="primary" onClick={handleClick}>Get Repositories</Button>
 
       </form>
 
-      {flag && <h1> Repositories</h1> && <Table dataSource={dataSource} columns={columns} />}
+      {flag && <div> <br></br>
+        <br></br><h1> Repositories</h1><Table dataSource={dataSource} columns={columns} /></div>}
 
-      {flag && <h1>starred Repositories</h1> && <Table dataSource={starSource} columns={columns} />}
+      {flag && <div><h1> <br></br>
+        <br></br>starred Repositories</h1>  <Table dataSource={starSource} columns={columns} /></div>}
 
     </div>
   );
